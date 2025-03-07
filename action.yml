@@ -25,5 +25,5 @@ runs:
       shell: bash
 
     - name: Step Summary
-      run: echo 'Hello world!' >> $GITHUB_STEP_SUMMARY
+      run: cat summary.md >> $GITHUB_STEP_SUMMARY
       shell: bash

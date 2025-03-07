@@ -15,7 +15,7 @@ struct Keanu: ParsableCommand {
         if #available(macOS 13.0, *) {
             let summaryData = markdown.data(using: .utf8)
             let path = URL(fileURLWithPath: workingDirectory)
-            let file = path.appendingPathComponent("summary.html", isDirectory: false)
+            let file = path.appendingPathComponent("summary.md", isDirectory: false)
             print("Generating summary at \(file)")
             try summaryData?.write(to: file, options: .atomic)
         } else {
