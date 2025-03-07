@@ -1,9 +1,7 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+//
+//  Keanu.swift
+//  Keanu
+//
+//  Created by Justin Magnini on 3/7/25.
+//
 
-@main
-struct App {
-    static func main() {
-        print("Hello Keanu!")
-    }
-}
