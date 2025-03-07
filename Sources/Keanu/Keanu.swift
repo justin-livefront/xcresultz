@@ -9,7 +9,7 @@ struct Keanu: ParsableCommand {
     func run() throws {
         /* generate summary */
         let markdown = """
-        ![](https://c.tenor.com/zsM4dGGpRUkAAAAC/woah-keanu-reeves.gif"/>
+        ![](https://c.tenor.com/zsM4dGGpRUkAAAAC/woah-keanu-reeves.gif")
         """
 
         if #available(macOS 13.0, *) {
