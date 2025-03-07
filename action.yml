@@ -7,11 +7,11 @@ inputs:
   target:
     description: Target
     required: true
-    default: Keanu
+    default: KeanuRunner
   product:
     description: Product
     required: true
-    default: Keanu
+    default: KeanuRunner
 
 # Define your outputs here.
 outputs:
