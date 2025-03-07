@@ -5,25 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "Keanu",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "Keanu",
-            targets: ["Keanu"]),
-        .executable(
-            name: "KeanuRunner",
-            targets: ["KeanuRunner"]
-        ),
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Keanu"
-        ),
         .executableTarget(
-            name: "KeanuRunner",
-            dependencies: ["Keanu"]
+            name: "Keanu",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+            ]
         ),
     ]
 )
