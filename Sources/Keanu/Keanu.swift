@@ -8,19 +8,12 @@ struct Keanu: ParsableCommand {
 
     func run() throws {
         /* generate summary */
-        let html = """
-        <html>
-        <body>
-        <h1>Keanu Approves!</h1>
-        <p>
-        <img src="https://c.tenor.com/zsM4dGGpRUkAAAAC/woah-keanu-reeves.gif"/>
-        </p>
-        </body>
-        </html>
+        let markdown = """
+        ![](https://c.tenor.com/zsM4dGGpRUkAAAAC/woah-keanu-reeves.gif"/>
         """
 
         if #available(macOS 13.0, *) {
-            let summaryData = html.data(using: .utf8)
+            let summaryData = markdown.data(using: .utf8)
             let path = URL(fileURLWithPath: workingDirectory)
             let file = path.appendingPathComponent("summary.html", isDirectory: false)
             print("Generating summary at \(file)")

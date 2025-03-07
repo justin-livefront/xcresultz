@@ -24,8 +24,6 @@ runs:
           --working-directory ${{ github.workspace }}
       shell: bash
 
-    - name: Upload Summary
-      uses: actions/upload-artifact@v4
-      with:
-        name: summary.html
-        path: ${{ github.workspace }}/summary.html
+    - name: Step Summary
+      run: echo 'Hello world!' >> $GITHUB_STEP_SUMMARY
+      shell: bash
