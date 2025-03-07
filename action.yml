@@ -4,10 +4,14 @@ author: GitHub Actions
 
 # Define your inputs here.
 inputs:
-  who-to-greet:
-    description: Who to greet
+  target:
+    description: Target
     required: true
-    default: World
+    default: Keanu
+  product:
+    description: Product
+    required: true
+    default: Keanu
 
 # Define your outputs here.
 outputs:
@@ -15,7 +19,12 @@ outputs:
     description: The time we greeted you
 
 runs:
-  using: docker
-  image: Dockerfile
-  env:
-    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+  using: 'composite'
+  steps:
+    - run: |
+        cd ${{ github.action_path }}
+        swift run Keanu \
+          --target ${{ inputs.target }} \
+          --product ${{ inputs.product }} \
+          --working-directory ${{ github.workspace }}
+      shell: bash
