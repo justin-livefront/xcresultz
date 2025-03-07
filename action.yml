@@ -1,5 +1,5 @@
-name: Hello, World!
-description: Greet someone and record the time
+name: XCResultz
+description: Parse an xcresults and generate a summary.
 author: GitHub Actions
 
 # Define your inputs here.
@@ -23,3 +23,9 @@ runs:
           --path ${{ inputs.path }} \
           --working-directory ${{ github.workspace }}
       shell: bash
+
+    - name: Upload Summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: summary.html
+        path: ${{ github.workspace }}/summary.html
